@@ -1,18 +1,20 @@
 package org.skypro.skyshop.model.basket;
 
 import org.skypro.skyshop.model.product.Product;
+import org.skypro.skyshop.model.search.Searchable;
 
 import java.util.*;
 
-public class ProductBasket<P extends Product> {
-    private final Map<String, List<P>> products;
+public class ProductBasket <P extends Product > {
+    private final Map<UUID, Integer> products;
 
     public ProductBasket() {
         this.products = new HashMap<>();
     }
 
-    public void addProduct(P p) {
-        products.computeIfAbsent(p.getName(), k -> new ArrayList<>()).add(p);
+
+    public void addProduct(UUID id) {
+
     }
 
     public long isSpecialCount() {
@@ -39,5 +41,5 @@ public class ProductBasket<P extends Product> {
         }
     }
     // ДОПИСАТЬ КОД И ПОНЯТЬ ЧТО ТУТ НАПИСАНО ВООБЩЕ
-    
+
 }
