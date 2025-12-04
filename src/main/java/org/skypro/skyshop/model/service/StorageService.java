@@ -59,7 +59,7 @@ public class StorageService {
 
 
     public Optional<Product> getProductById(UUID id) {
-        return Optional.ofNullable(availableProducts.get(id));
+        return Optional.ofNullable(productStorage.get(id));
     }
 
 
