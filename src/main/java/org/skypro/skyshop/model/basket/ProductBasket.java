@@ -10,13 +10,11 @@ import java.util.*;
 
 @Configuration
 @SessionScope
-public class ProductBasket<P extends Product> {
+public class ProductBasket<Product> {
     private final Map<UUID, Integer> products;
-    private final StorageService storageService;
 
-    public ProductBasket(StorageService storageService) {
+    public ProductBasket() {
         this.products = new HashMap<>();
-        this.storageService = storageService;
     }
 
 
@@ -33,31 +31,4 @@ public class ProductBasket<P extends Product> {
     public Map<UUID, Integer> getAllProducts() {
         return Collections.unmodifiableMap(products);
     }
-
-
-
-//    public long isSpecialCount() {
-//        return products.values().stream()
-//                .flatMap(Collection::stream)
-//                .filter(p -> p.isSpecial())
-//                .count();
-//    }
-//
-//    public double totalCost() {
-//        return products.values().stream()
-//                .flatMap(Collection::stream)
-//                .mapToDouble(Product::getCost)
-//                .sum();
-//    }
-//
-//    public void printAllProducts() {
-//        if (products.isEmpty()) {
-//            System.out.println("Корзина пуста");
-//        } else {
-//            products.values().stream()
-//                    .flatMap(Collection::stream)
-//                    .forEach(p -> System.out.println(p.toString()));
-//        }
-//    }
-    // ДОПИСАТЬ КОД И ПОНЯТЬ ЧТО ТУТ НАПИСАНО ВООБЩЕ
 }

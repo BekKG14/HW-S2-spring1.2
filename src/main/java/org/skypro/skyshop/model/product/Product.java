@@ -37,13 +37,12 @@ public abstract class Product implements Searchable {
 
 
     @Override
-    @JsonIgnore
+
     public String getSearchTerm() {
         return name;
     }
 
     @Override
-    @JsonIgnore
     public String getSearchType() {
         return "PRODUCT";
     }
