@@ -30,6 +30,8 @@ public class StorageService {
         return articleStorage.values();
     }
 
+
+
     private void loadInitialData() {
         Product cucumber = new SimpleProduct(UUID.randomUUID(), "Cucumber", 20);
         Product vodka = new SimpleProduct(UUID.randomUUID(), "Vodka", 101);
@@ -55,11 +57,18 @@ public class StorageService {
         articleStorage.put(discount.getId(), discount);
     }
 
+
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(productStorage.get(id));
+    }
+
+
     public Collection<Searchable> getAllSearchable() {
         List<Searchable> searchables = new ArrayList<>();
         searchables.addAll(getAllProducts());
         searchables.addAll(getAllArticles());
         return searchables;
     }
+
 
 }
