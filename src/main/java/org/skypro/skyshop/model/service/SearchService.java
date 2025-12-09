@@ -1,6 +1,7 @@
 package org.skypro.skyshop.model.service;
 
 import org.skypro.skyshop.model.SearchResult;
+import org.skypro.skyshop.model.product.Product;
 import org.skypro.skyshop.model.search.Searchable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,4 +29,6 @@ public class SearchService {
                .map(SearchResult::fromSearchable)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
+
+
 }
