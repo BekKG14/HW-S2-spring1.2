@@ -1,5 +1,6 @@
 package org.skypro.skyshop.model.controller;
 
+import org.skypro.skyshop.model.NoSuchProductException;
 import org.skypro.skyshop.model.SearchResult;
 import org.skypro.skyshop.model.UserBasket;
 import org.skypro.skyshop.model.article.Article;
